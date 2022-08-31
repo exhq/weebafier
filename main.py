@@ -35,10 +35,10 @@ while True:
         break
 for i,b in enumerate(funnynames):
     print(i+1 , " - " , b , f"{funnylinks[i]}")
-x = input("choose one(or type \"random\"): ")
-if x == "random":
-    x = random.randint(1, len(funnylinks[i]))
-with req.urlopen(funnylinks[int(x)-1]) as img:
+z = input("choose one(or type \"random\"): ")
+if z == "random":
+    z = random.randint(1, len(funnylinks[i]))
+with req.urlopen(funnylinks[int(z)-1]) as img:
     with tempfile.NamedTemporaryFile("w+b", delete=False, suffix="." + x.split(".")[-1]) as file:
         file.write(img.read())
         os.system(f"feh --bg-scale {file.name}")
